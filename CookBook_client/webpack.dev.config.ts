@@ -13,7 +13,7 @@ interface Configuration extends WebpackConfiguration {
 const config: Configuration = {
   mode: "development",
   output: {
-    path: path.resolve(__dirname, "dev"),
+    path: path.resolve(__dirname, "../CookBook/static"),
     clean: true,
   },
   entry: "./src/index.tsx",

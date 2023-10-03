@@ -22,4 +22,4 @@ class RecipeView(viewsets.ModelViewSet):
 
 
 class IndexView(TemplateView):
-    template_name = 'default.html'
+    template_name = 'index.html'

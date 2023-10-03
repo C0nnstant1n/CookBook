@@ -13,7 +13,7 @@ class Recipe(models.Model):
     title = models.CharField(max_length=32, unique=False)
     recipe = models.TextField()
     date_add = models.DateTimeField(auto_now=True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, related_name="recipe", on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.title}"

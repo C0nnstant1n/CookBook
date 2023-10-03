@@ -3,3 +3,4 @@ djangorestframework
 django-filter
 pyyaml
 uritemplate
+django-cors-headers
