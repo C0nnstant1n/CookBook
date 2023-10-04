@@ -14,18 +14,20 @@ interface Category {
 }
 
 interface Params {
-  contentId: number;
+  [key: string]: number;
 }
 
 export async function categoryLoader({ params }: { params: Params }) {
   const response = await axios.get(
-    `http://127.0.0.1:8000/api/category/${params.contentId}`
+    `http://127.0.0.1:8000/api/category/${params.Id}`
   );
   return response.data;
 }
 
-export default function Content() {
+export default function ContentList() {
   const data: Category = useLoaderData();
+  console.log(data);
+
   return (
     <>
       {data.recipe.map((recipe) => (

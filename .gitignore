@@ -2,3 +2,4 @@ venv/
 node_modules/
 secrets.py
 .idea
+__pycache__/
