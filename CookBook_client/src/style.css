@@ -387,3 +387,8 @@ i {
   justify-content: center;
   width: 100%;
 }
+
+.comeback {
+  display: flex;
+  justify-content: flex-end;
+}

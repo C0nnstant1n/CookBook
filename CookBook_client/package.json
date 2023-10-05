@@ -1,7 +1,7 @@
 {
-  "name": "weather",
+  "name": "cookbook",
   "version": "1.0.0",
-  "description": "My fisrt React App",
+  "description": "React App whis React Router",
   "main": "index.js",
   "scripts": {
     "dev": "webpack --config webpack.dev.config.ts",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/C0nnstant1n/1stReactApp.git"
+    "url": "git+https://github.com/C0nnstant1n/CookBook.git"
   },
   "keywords": [],
   "author": "C0nstant1n",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/C0nnstant1n/1stReactApp/issues"
+    "url": "https://github.com/C0nnstant1n/CookBook/issues"
   },
-  "homepage": "https://github.com/C0nnstant1n/1stReactApp#readme",
+  "homepage": "https://github.com/C0nnstant1n/CookBook#readme",
   "dependencies": {
     "@babel/core": "^7.22.17",
     "@babel/plugin-transform-runtime": "^7.22.15",

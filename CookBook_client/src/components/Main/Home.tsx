@@ -1,5 +1,11 @@
 import * as React from "react";
-import { NavLink, Link, useLoaderData, Outlet } from "react-router-dom";
+import {
+  NavLink,
+  Link,
+  useLoaderData,
+  Outlet,
+  useNavigation,
+} from "react-router-dom";
 
 type Category = {
   id: string;
@@ -8,6 +14,7 @@ type Category = {
 
 export default function Home() {
   const categories: Category[] = useLoaderData();
+  const navigation = useNavigation();
 
   return (
     <>
@@ -58,7 +65,10 @@ export default function Home() {
           )}
         </nav>
       </div>
-      <div id='detail'>
+      <div
+        id='detail'
+        className={navigation.state === "loading" ? "loading" : ""}
+      >
         <Outlet />
       </div>
     </>
