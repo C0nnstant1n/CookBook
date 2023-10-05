@@ -14,6 +14,7 @@ const config: Configuration = {
   mode: "development",
   output: {
     path: path.resolve(__dirname, "../CookBook/static"),
+    publicPath: "/",
     clean: true,
   },
   entry: "./src/index.tsx",

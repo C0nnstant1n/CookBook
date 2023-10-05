@@ -13,20 +13,15 @@ interface Category {
   recipe: Recipe[];
 }
 
-interface Params {
-  [key: string]: number;
-}
-
-export async function categoryLoader({ params }: { params: Params }) {
-  const response = await axios.get(
-    `http://127.0.0.1:8000/api/category/${params.Id}`
+export async function CategoryLoader({ params }) {
+  const response = await axios.get<Category>(
+    `http://127.0.0.1:8000/api/category/${params.recipesId}`
   );
   return response.data;
 }
 
 export default function ContentList() {
   const data: Category = useLoaderData();
-  console.log(data);
 
   return (
     <>
@@ -34,7 +29,7 @@ export default function ContentList() {
         <div id='content' key={recipe.id}>
           <div>
             <h1>{recipe.title}</h1>
-            <Link to={`/recipe/${recipe.id}`}>подробнее</Link>
+            <Link to={`recipe/${recipe.id}`}>подробнее</Link>
           </div>
         </div>
       ))}

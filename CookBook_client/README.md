@@ -1,6 +1,7 @@
-# Template: Webpack + React + Type Script
+# Клиентская часть Приложения Cook Book
 
-Установка: npm install,
+__Установка:__ 
+- npm install,
 
-Запуск development сервера: npm start,
+Запуск development сервера: npm start,\
 Запуск production: npm run build

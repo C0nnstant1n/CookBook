@@ -1,11 +1,10 @@
 import * as React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ErrorPage from "../error-page.tsx";
+import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
+import ErrorPage from "../error-page";
 import axios from "axios";
-import Categories from "./Main/Categories.tsx";
-import ContentList, { categoryLoader } from "./Main/ContentList.tsx";
-import Content, { ContentLoader } from "./Main/Content.tsx";
-import Plug from "./Main/plug.tsx";
+import Home from "./Main/Home";
+import ContentList, { CategoryLoader } from "./Main/ContentList";
+import Content, { ContentLoader } from "./Main/Content";
 
 async function loader() {
   const response = await axios.get(`http://127.0.0.1:8000/api/category/`);
@@ -15,21 +14,40 @@ async function loader() {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Categories />,
+    element: (
+      <>
+        <div className='home'>
+          <h1>Добро Пожаловать</h1>
+          <Link to='recipes'>Кулинарная книга</Link>
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href='http://127.0.0.1:8000/swagger-ui/'
+          >
+            API
+          </a>
+        </div>
+      </>
+    ),
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "recipes",
+    element: <Home />,
     errorElement: <ErrorPage />,
     loader: loader,
     children: [
       {
         index: true,
-        element: <Plug />,
+        element: <h2>Выберите Категорию</h2>,
       },
       {
-        path: "recipes/:Id",
+        path: ":recipesId",
         element: <ContentList />,
-        loader: categoryLoader,
+        loader: CategoryLoader,
       },
       {
-        path: "recipe/:Id",
+        path: ":recipesId/recipe/:recipeId",
         element: <Content />,
         loader: ContentLoader,
       },

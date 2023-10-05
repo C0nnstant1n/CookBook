@@ -6,4 +6,8 @@ import "./style.css";
 
 import App from "./components/App";
 
-root.render(<App />);
+root.render(
+  <>
+    <App />
+  </>
+);

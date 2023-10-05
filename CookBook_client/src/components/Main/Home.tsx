@@ -1,18 +1,29 @@
 import * as React from "react";
-import { NavLink, useLoaderData, Outlet } from "react-router-dom";
+import { NavLink, Link, useLoaderData, Outlet } from "react-router-dom";
 
 type Category = {
   id: string;
   name: string;
 };
 
-export default function Categories() {
+export default function Home() {
   const categories: Category[] = useLoaderData();
 
   return (
     <>
       <div id='sidebar'>
-        <h1>Cooking Recipes</h1>
+        <h1>
+          <Link to={"/"}>Cooking Recipes </Link>
+          &nbsp;
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href='http://127.0.0.1:8000/swagger-ui/'
+          >
+            API
+          </a>
+        </h1>
+
         <div>
           <form id='search-form' role='search'>
             <input
