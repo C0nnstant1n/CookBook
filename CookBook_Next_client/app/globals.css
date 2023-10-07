@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.header,
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 10%;
+  background-color: rgb(199, 194, 194);
+  width: 100vw;
+}
+
+.main {
+  min-height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  text-align: center;
+}
+a {
+  margin: 0 1rem;
+}
